@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+<body>
+
+    {% include 'nav.html' %}
+
+    <h4 class="text-center my-5"> 
+    
+        <marquee  direction="right">... <span style="color: red;" >S</span>tudent 
+             <span style="color: red;" >D</span>etails ... </marquee> 
+    
+    </h4>
+<div class="container my-5">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark" style="font-size: 1.3em;">
+                <tr>
+                    <th scope="col"> Image </th>
+                    <th scope="col"> Name </th>
+                    <th scope="col">Address </th>
+                    <th scope="col">selected_coures</th>
+                    <th scope="col">total_fees</th>
+                    <th scope="col">paid_fees</th>
+                    <th scope="col">Remaining Fees </th>
+                    
+                </tr>
+            </thead>
+            <tbody style="font-size: 1.1em; font-weight: 500;">
+                {% for i in iterate %}
+                <tr>
+                    <th scope="row">{{ i.id }}</th>
+                    <td>{{name }}</td>
+                    <td>{{ address }}</td>
+                    <td>{{ moblie }}</td>
+                    <td>{{ select_coures}}</td>
+                    <td>{{ total_fees }}</td>
+                    <td>{{ paid_fees }}</td>
+                    <td>{{ remining}}</td>
+                    <td>{{ image}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+  
+    
+</body>
+</html>
+<style> .nav-item {
+    font-size: 1.2em;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+}
+
+.nav-item a:hover {
+    color: red;
+    transition: all 0.9s;
+
+}
+
+</style>
+

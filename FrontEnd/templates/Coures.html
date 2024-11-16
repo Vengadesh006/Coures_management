@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container my-5">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark" style="font-size: 1.3em;">
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col">Fees</th>
+                    <th scope="col">GST</th>
+                    <th scope="col">Total Amount</th>
+                </tr>
+            </thead>
+            <tbody style="font-size: 1.1em; font-weight: 500;">
+                {% for i in iterate %}
+                <tr>
+                   <td> {{i.id}} </td>
+                   <td> {{i.coures}} </td>
+                   <td> {{i.duration}} </td>
+                   <td> {{i.fees}} </td>
+                   <td> {{i.gst}} </td>
+                   <td> {{i.final_fees}} </td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

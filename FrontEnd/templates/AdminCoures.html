@@ -1,0 +1,58 @@
+{% extends 'AdminBase.html' %}
+
+{%  block adminhome %}
+
+<div class="container my-4">
+  <div class="add-but mb-3">
+    <div class="direct">
+      <a href="/django/couresAdd/">
+        <button class="btn btn-secondary">
+          <i class="bi bi-plus-circle"></i>
+        </button>
+      </a>
+    </div>
+  </div>
+
+  
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead style="font-size: 1.3em;">
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Course</th>
+          <th scope="col">Duration</th>
+          <th scope="col">Fees</th>
+          <th scope="col">GST</th>
+          <th scope="col">Total Amount</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody style="font-size: 1.1em; font-weight: 500;">
+        {% for i in iterate %}
+        <tr>
+          <th scope="row">{{ i.id }}</th>
+          <td>{{ i.coures }}</td>
+          <td>{{ i.duration }}</td>
+          <td>{{ i.fees }}</td>
+          <td>{{ i.gst }}</td>
+          <td>{{ i.final_fees }}</td>
+          <td>
+            <a href="{% url 'update' i.id %}">
+              <button class="btn btn-primary btn-sm">Update</button>
+            </a>
+          </td>
+          <td>
+            <a href="{% url 'del' i.id %}">
+              <button class="btn btn-danger btn-sm">Delete</button>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

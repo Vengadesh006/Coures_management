@@ -1,0 +1,41 @@
+.navsite{
+    padding: 1.4em;
+    margin-bottom: 20px;
+}
+.navsite h5 {
+    text-align: center;
+    padding: 10px;
+    letter-spacing: 0.0em;
+    font-size: 1.4em;
+    font-weight: 800;
+}
+.navsite .pngimg{
+    padding: 1em;
+    margin-left: 30px;
+}
+.card {
+    margin-bottom: 40px;
+   
+}
+.card img{
+    width: 250px;
+    height: 300px;
+    padding: 1.3em;
+    margin-left: 15px;
+}
+.card:hover{
+    transform: scale(1.04 , 1.04);
+    box-shadow: 2px 10px 15px #535151;
+}
+
+.move {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#demo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}

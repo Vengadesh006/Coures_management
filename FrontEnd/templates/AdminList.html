@@ -1,0 +1,52 @@
+{% extends "AdminHome.html" %}
+
+{% block adminhome %}
+
+<div class="container my-4">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">Selected Course</th>
+                    <th scope="col">Placement</th>
+                    <th scope="col">Total Fees</th>
+                    <th scope="col">Paid Fees</th>
+                    <th scope="col">Remaining Fees</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in iterate %}
+                <tr>
+                    <td>
+                        {% if i.pictuer %}
+                        <img src="{{i.pictuer.url}}" alt="not found" class="img-fluid" style="max-width: 150px; height: auto;">
+                        {% else %}
+                        <p>No image 😒</p>
+                        {% endif %}
+                    </td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.moblie}}</td>
+                    <td>{{i.selected_coures}}</td>
+                    <td>{{i.placement}}</td>
+                    <td>{{i.total_fees}}</td>
+                    <td>{{i.paid_fees}}</td>
+                    <td>{{i.remaining_fees}}</td>
+                    <td>
+                        <a href="{% url 'delete' i.id %}">
+                            <button class="btn btn-danger">Delete</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}   

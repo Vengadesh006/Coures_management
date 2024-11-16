@@ -1,0 +1,58 @@
+{% extends 'AdminBase.html' %}
+
+{% block adminhome %}
+
+{% load static %}
+
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h5>Programs in Collaboration with the World's Top Universities & MNCs</h5>
+        <img src="https://cdn01.alison-static.net/public/html/site/img/homepage/banner-image.svg" class="img-fluid" alt="Banner Image">
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <a href="/django/cardAdd/" class="scroll-button">
+            <button class="btn btn-danger">
+                <i class="bi bi-plus-circle"></i>
+            </button>
+        </a>
+    </div>
+
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for i in iterate %}
+            <div class="col">
+                <div class="card"  style="width: 20rem;">
+                    <img src="{{ i.image.url }}" class="card-img-top" alt="Card Image">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">{{ i.title }}</h5>
+                        <p class="card-text  text-center">{{ i.content }}</p>
+                        <a href="/django/coures/" class="mt-auto">
+                            <button class="btn btn-danger w-100">Courses</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container text-center" style="margin-bottom: 50px;">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="https://cdn01.alison-static.net/public/html/site/img/homepage/upskill.png" class="img-fluid" alt="Upskill Image">
+            </div>
+            <div class="col-md-6 text-md-start mt-4 mt-md-0" id="demo">
+                <h1 class="mb-3">A Faster Way For Your Employees To Grow And Upskill</h1>
+                <p style="font-size: 1.3em; padding: 10px;">
+                    Our range of solutions has something to offer all businesses and organizations. Whether you’re a non-profit or a commercial entity, we can tailor a plan for your needs.
+                </p>
+                <button type="button" class="btn btn-outline-danger">More Information</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    {% endblock %}

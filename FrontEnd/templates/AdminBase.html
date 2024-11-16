@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Coures </title>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript  %}
+
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+</head>
+
+<body>
+
+    {% include 'AdminNav.html' %}
+
+    {% block adminhome %}
+
+    {% endblock %}
+
+    {% include 'Footer.html' %}
+    
+    
+
+</body>
+
+</html>
+<style>
+.nav-item {
+    font-size: 1.2em;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+}
+
+.nav-item a:hover {
+    color: red;
+    transition: all 0.9s;
+
+}
+.add-but{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 40px;
+}
+.bi{
+    font-size: 1.4em;
+}
+input[type = 'text'] {
+    border: 2px solid #acacac;
+}
+input[type = 'number'] {
+    border: 2px solid #acacac;
+}
+.scroll-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+</style>    

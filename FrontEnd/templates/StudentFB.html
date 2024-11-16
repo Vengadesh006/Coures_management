@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+
+<section class="py-4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h4 class="text-center my-4">
+                    <span style="color: red;">C</span>OURES <span style="color: red;">A</span>DD
+                </h4>
+                <hr>
+            </div>
+            <div class="col-md-6">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        {{ forms.as_p }}
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-danger my-5">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+

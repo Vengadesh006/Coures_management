@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+   
+</head>
+<body>
+    <div class="main">
+        <h3>Student Login</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="first">Username:</label>
+            <input type="text" id="first" name="username" placeholder="Enter your Username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+
+            <h5>{{Error}}</h5>
+
+            <div class="wrap">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: sans-serif;
+        line-height: 1.5;
+        min-height: 100vh;
+        background: #f3f3f3;
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .main {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 0 20px #00000033;
+        padding: 20px 30px;
+        transition: transform 0.2s;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    h3 {
+        color: #ff0101; 
+    }
+
+    label {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        text-align: left;
+        color: #555;
+        font-weight: bold;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        background-color: #d50f0f;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h5 {
+        color: #cb3131;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+    }
+
+    @media (min-width: 768px) {
+        .main {
+            width: 400px;
+        }
+    }
+</style>
